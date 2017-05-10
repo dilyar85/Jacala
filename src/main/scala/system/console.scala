@@ -1,4 +1,4 @@
-package ui
+package system
 
 import value.Environment
 
@@ -6,9 +6,8 @@ import value.Environment
   * Ework Console object. Most of the codes in this program are given by the professor during the lecture
   */
 object console {
-  val globalEnv = new Environment
-  val parsers = new EwokParsers
-  // for now
+  val globalEnv = new Environment // Created here
+  val parsers = new WookieParsers // for now
   var verbose = false
 
 

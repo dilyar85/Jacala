@@ -1,6 +1,6 @@
 package expression
 
-import ui.TypeException
+import system.TypeException
 import value.{Boole, Environment, Notification}
 
 /**

@@ -1,7 +1,7 @@
 package value
 
 import expression.Identifier
-import ui.UndefinedException
+import system.UndefinedException
 
 import scala.collection.mutable
 
