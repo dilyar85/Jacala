@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2d28da3-e3b6-474a-972f-69527fbcaf6d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Dilyar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/expression/Block.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/expression/Lambda.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/system/WookieParsers.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/value/Closure.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/EwokParsers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/JediException$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/JediException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/SyntaxException$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/SyntaxException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/TypeException$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/TypeException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/UndefinedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/console$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ui/console.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/EwokParsers.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/EwokParsers.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/JediException.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/JediException.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/SyntaxException.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/SyntaxException.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/TypeException.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/TypeException.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/UndefinedException.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/UndefinedException.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/ui/console.scala" afterPath="$PROJECT_DIR$/src/main/scala/system/console.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Conditional.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Conditional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Conjunction.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Conjunction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Disjunction.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/expression/Disjunction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/expression/FunCall$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/expression/FunCall$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/expression/FunCall.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/expression/FunCall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/value/Environment.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/value/Environment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/value/alu$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/value/alu$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/$global/$global/discoveredMainClasses/data" afterPath="$PROJECT_DIR$/target/streams/compile/$global/$global/discoveredMainClasses/data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/expression/Conditional.scala" afterPath="$PROJECT_DIR$/src/main/scala/expression/Conditional.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/expression/Conjunction.scala" afterPath="$PROJECT_DIR$/src/main/scala/expression/Conjunction.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/expression/Disjunction.scala" afterPath="$PROJECT_DIR$/src/main/scala/expression/Disjunction.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/expression/FunCall.scala" afterPath="$PROJECT_DIR$/src/main/scala/expression/FunCall.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/expression/Identifier.scala" afterPath="$PROJECT_DIR$/src/main/scala/expression/Identifier.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/value/Environment.scala" afterPath="$PROJECT_DIR$/src/main/scala/value/Environment.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/value/alu.scala" afterPath="$PROJECT_DIR$/src/main/scala/value/alu.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.history" afterPath="$PROJECT_DIR$/target/.history" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -244,28 +204,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jedi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jedi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -897,12 +835,12 @@
       <workItem from="1494047823475" duration="3000" />
       <workItem from="1494356454976" duration="738000" />
       <workItem from="1494361206898" duration="86000" />
-      <workItem from="1494393039555" duration="1409000" />
+      <workItem from="1494393039555" duration="1814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9852000" />
+    <option name="totallyTimeSpent" value="10257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="819" extended-state="6" />
