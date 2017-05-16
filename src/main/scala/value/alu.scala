@@ -17,81 +17,85 @@ object alu {
       case "more" => more(args)
       case "equals" => equals(args)
       case "unequals" => unequals(args)
+      // primitive I/O ops:
+      case "not" => not(args)
+      case "write" => write(args)
+      case "prompt" => prompt(args)
+      case "read" => read(args)
       case _ => throw new UndefinedException(operator)
     }
   }
 
+  private def castAsNumbers(vals: List[Value], opcode: String): List[Number] = {
+    if (vals.isEmpty) throw new TypeException(opcode + " expected > 0 inputs")
+    val ok = vals.filter(_.isInstanceOf[Number])
+    if (ok.length < vals.length) throw new TypeException(opcode + " inputs must be numbers")
+    vals.map(_.asInstanceOf[Number])
+  }
+
+
   private def add(args: List[Value]): Number = {
-    if (args.isEmpty) throw new TypeException("Addition input cannot be empty!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length != args.length) throw new TypeException("Inputs to add must be numbers!")
-    val nums2 = nums.map(_.asInstanceOf[Number])
-    nums2.reduce(_ + _)
+    castAsNumbers(args, "add").reduce(_ + _)
   }
 
   private def sub(args: List[Value]): Value = {
-    if (args.isEmpty) throw new TypeException("Subtraction input cannot be empty!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length != args.length) throw new TypeException("Inputs to subtract must be numbers!")
-    val nums2 = nums.map(_.asInstanceOf[Number])
-    nums2.reduce(_ - _)
+    castAsNumbers(args, "sub").reduce(_ - _)
   }
 
   private def mul(args: List[Value]): Value = {
-    if (args.isEmpty) throw new TypeException("Multiplication input cannot be empty!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length != args.length) throw new TypeException("Inputs to multiply must be numbers!")
-    val nums2 = nums.map(_.asInstanceOf[Number])
-    nums2.reduce(_ * _)
+    castAsNumbers(args, "mul").reduce(_ * _)
   }
 
   private def div(args: List[Value]): Value = {
-    if (args.isEmpty) throw new TypeException("Divisors cannot be empty!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length != args.length) throw new TypeException("Inputs to divide must be numbers!")
-    val nums2 = nums.map(_.asInstanceOf[Number])
-    nums2.reduce(_ / _)
+    castAsNumbers(args, "div").reduce(_ / _)
   }
 
   private def less(args: List[Value]): Value = {
-    if (args.size != 2) throw new TypeException("Inequality must have two inputs!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length < args.length) throw new TypeException("Inputs to be compared must be numbers!")
-    val nums2 = args.map(_.asInstanceOf[Number])
-    nums2.head < nums2(1)
+    val nums = castAsNumbers(args, "less")
+    if (args.length != 2) throw new TypeException("less inputs must be numbers")
+    if (nums.head.value < nums(1).value) Boole(true) else Boole(false)
   }
 
   private def more(args: List[Value]): Value = {
-    if (args.size != 2) throw new TypeException("Inequality must have two inputs!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length < args.length) throw new TypeException("Inputs to be compared must be numbers!")
-    val nums2 = args.map(_.asInstanceOf[Number])
-    nums2.head > nums2(1)
+    val nums = castAsNumbers(args, "more")
+    if (args.length != 2) throw new TypeException("more inputs must be numbers")
+    if (nums.head.value > nums(1).value) Boole(true) else Boole(false)
   }
 
   private def equals(args: List[Value]): Value = {
-    if (args.size != 2)
-      throw new TypeException("Equality must have two inputs!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length < args.length) throw new TypeException("Inputs to be compared must be numbers!")
-    val args2 = args.map(_.asInstanceOf[Number])
-    args2.head == args2(1)
+    if (args.isEmpty) throw new TypeException("equals expected > 0 inputs")
+    var more = true
+    var result = true
+    for (i <- 1 until args.length if more)
+      if (args(i) != args.head) {
+        result = false
+        more = false
+      }
+    Boole(result)
   }
 
   private def unequals(args: List[Value]): Value = {
-    if (args.size != 2) throw new TypeException("Unequals must have two numbers!")
-    val nums = args.filter(_.isInstanceOf[Number])
-    if (nums.length < args.length) throw new TypeException("Inputs to be compared must be numbers!")
-    val nums2 = args.map(_.asInstanceOf[Number])
-    nums2.head != nums2(1)
+    if (args.length != 2) throw new TypeException("unequals expected 2 inputs")
+    if (args.head != args(1)) Boole(true) else Boole(false)
   }
 
   private def not(args: List[Value]): Value = {
-    if (args.length != 1) throw new TypeException("Not(!) operation must have only one input")
-    val booles = args.filter(_.isInstanceOf[Boole])
-    if (booles.length < args.length) throw new TypeException("Input must be Boolean!")
-    val booles2 = args.map(_.asInstanceOf[Boole])
-    booles2.head ! ()
+    if (args.length != 1) throw new TypeException("not expected 1 input")
+    if (!args.head.isInstanceOf[Boole]) throw new TypeException("input to not must be Boole")
+    args.head.asInstanceOf[Boole] ! () // can't get Boole.! to work
   }
+
+  def write(vals: List[Value]): Value = {
+    println(vals.head); Notification.DONE
+  }
+
+  def read(vals: List[Value]): Value = {
+    val result = readDouble(); Number(result)
+  }
+
+  def prompt(vals: List[Value]): Value = {
+    print("=> "); Notification.DONE
+  }
+
 
 }

@@ -12,5 +12,6 @@ case class Boole(value: Boolean) extends Literal {
 
   def !() = Boole(!value)
 
+
   override def toString = value.toString
 }
