@@ -1,6 +1,5 @@
 package expression
 
-import system.UndefinedException
 import value.Environment
 
 /**
