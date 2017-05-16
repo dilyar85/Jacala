@@ -1,43 +1,41 @@
 package system
-
-import value.Environment
-
-/**
-  * Ework Console object. Most of the codes in this program are given by the professor during the lecture
-  */
+import value._
+import scala.io._
+/*
+ * Notes:
+ * console is Jedi's user interface
+ * parsers and global environment are created here
+ * console.main launches repl or executes a Jedi file
+ */
 object console {
-  val globalEnv = new Environment // Created here
-  val parsers = new WookieParsers // for now
+  val parsers = new SithParsers // for now
+  val globalEnv = new Environment
   var verbose = false
 
-
-  def execute(cmd: String): String = {
-    val tree = parsers.parseAll(parsers.expression, cmd)
+  def execute(cmmd: String): String = {
+    val tree = parsers.parseAll(parsers.expression, cmmd)
     tree match {
-      case t: parsers.Failure => throw new SyntaxException(t)
-      case _ =>
-        val exp = tree.get
-        // get the expression from the tree
-        val result = exp.execute(globalEnv) // execute the expression
-        result.toString // return string representation of result
+      case tree: parsers.Failure => throw new SyntaxException(tree)
+      case _ => {
+        val exp = tree.get  // get the expression from the tree
+        val result = exp.execute(globalEnv)  // execute the expression
+        result.toString  // return string representation of result
+      }
     }
   }
 
-  def repl {
+  private def executeFile(fileName: String) {
+
     var more = true
-    var cmd: String = ""
-    while (more) {
+
+    for (line <- Source.fromFile(fileName).getLines if more) {
       try {
-        // read/execute/print
-        print("-> ")
-        cmd = readLine
-        // handle meta-commands
-        if (cmd == "quit") more = false
-        else println(execute(cmd))
-      }
-      catch {
+        println("-> " + line)
+        println(execute(line))
+      } catch {
+
         case e: SyntaxException => {
-          println(e.getMessage)
+          println(e)
           println(e.result.msg)
           println("line # = " + e.result.next.pos.line)
           println("column # = " + e.result.next.pos.column)
@@ -47,23 +45,78 @@ object console {
           println(e)
           if (verbose) e.printStackTrace()
         }
+        case e: UndefinedException => {
+          println(e)
+          if (verbose) e.printStackTrace()
+        }
         case e: JediException => {
           println(e)
+          if (verbose) e.printStackTrace()
+        }
+
+        case e: Exception => {
+          println(e)
+          more = false
+        }
+      } // catch
+    } // for
+    println("bye")
+  }
+
+
+
+  // read-execute-print loop
+  def repl {
+    var more = true
+    var cmmd = ""
+    while(more) {
+      try {
+        print("-> ")
+        cmmd = StdIn.readLine
+        if (cmmd == "quit") more = false
+        else println(execute(cmmd))
+      }
+      catch {
+        case e: SyntaxException => {
+          println(e)
+          println(e.result.msg)
+          println("line # = " + e.result.next.pos.line)
+          println("column # = " + e.result.next.pos.column)
+          println("token = " + e.result.next.first)
+        }
+        case e: UndefinedException => {
+          println(e)
+          if (verbose) e.printStackTrace()
+        }
+        case e: UndefinedException => {
+          println(e)
+          if (verbose) e.printStackTrace()
+        }
+        case e: JediException => {
+          println(e)
+          if (verbose) e.printStackTrace()
         }
         case e: Exception => {
           println(e)
           more = false
         }
-        // handle other types of exceptions
-
       } finally {
         Console.flush
       }
     }
-    println("Bye.")
+    println("bye")
   }
 
   def main(args: Array[String]): Unit = {
-    repl
+    if (args.length == 0)
+      repl
+    else
+      try {
+        executeFile(args(0))
+      } catch  {
+        case e: Exception => {
+          println(e)
+        }
+      }
   }
 }

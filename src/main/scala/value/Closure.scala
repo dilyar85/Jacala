@@ -5,7 +5,7 @@ import system.TypeException
 
 
 //Closure has params, body and defEnv(it kind of organizes lambda)
-class Closure(params: List[Identifier], body: Expression, defEnv: Environment) extends Value{
+case class Closure(params: List[Identifier], body: Expression, defEnv: Environment) extends Value{
   def apply(args: List[Value]): Value = {
     //Check params and args length
     if(params.length != args.length)
@@ -13,9 +13,10 @@ class Closure(params: List[Identifier], body: Expression, defEnv: Environment) e
     //1.create localEnv extending defEnv
     val localEnv = new Environment(defEnv)
     //2.bind params to args in localEnv
-    for(param <- params; arg <- args)
-      localEnv.put(param, arg)
+    for((param, arg) <- params zip args) localEnv.put(param, arg)
     //3.body.execute(localEnv)
     body.execute(localEnv)
   }
+
+  override def toString = "Closure(" + params.toString + body.toString + ")"
 }

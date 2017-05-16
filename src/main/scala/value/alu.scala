@@ -1,12 +1,17 @@
 package value
 
 import expression.Identifier
-import system.{TypeException, UndefinedException}
+import system.{ TypeException, UndefinedException}
 
 /**
   * Created by Dilyar on 4/25/17.
   */
 object alu {
+
+
+
+
+
   def execute(operator: Identifier, args: List[Value]): Value = {
     operator.name match {
       case "add" => add(args)
@@ -22,7 +27,23 @@ object alu {
       case "write" => write(args)
       case "prompt" => prompt(args)
       case "read" => read(args)
+      // Sith
+      case "content" => setContent(args)
+      case "var" => createVar(args)
       case _ => throw new UndefinedException(operator)
+    }
+  }
+
+  def createVar(args: List[Value]): _root_.value.Value = {
+    if(args.isEmpty) throw new TypeException("Error, Variable cannot be empty")
+    else Variable(args.head)
+  }
+
+  def setContent(args: List[Value]): _root_.value.Value = {
+    if(args.isEmpty) throw new TypeException("Error, Variable cannot be empty")
+    else args.head match {
+      case variable: Variable => variable.content
+      case _ => throw new TypeException("Error, need variable here")
     }
   }
 

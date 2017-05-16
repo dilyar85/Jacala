@@ -1,0 +1,15 @@
+def a = 100
+def b = 200
+{def b = 20; a + b}
+def foo = lambda(x, y) 3 * x + 2 * y
+foo(4, 3)
+def mulx = lambda(x) lambda(y) x * y
+def mul5 = mulx(5)
+mul5(10)
+def tri = lambda(n) if (n == 0) 0 else n + tri(n - 1)
+tri(5)
+tri(10)
+def maxSmall = 100
+def big = lambda(x) maxSmall < x
+big(10)
+{def maxSmall = 1; big(10)}

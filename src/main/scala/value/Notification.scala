@@ -12,6 +12,7 @@ object Notification {
 
   val OK = Notification("ok")
   val DONE = Notification("done")
-  val FAIL = new Notification("fail")
+  val FAIL = Notification("fail")
+  val UNKNOWN = Notification("unknown")
   //etc.
 }
