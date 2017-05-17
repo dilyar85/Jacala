@@ -10,17 +10,11 @@ import scala.util.parsing.combinator.RegexParsers
   */
 class WookieParsers extends RegexParsers {
 
-  //expression ::= declaration | conditional | disjunction
-  //  def expression: Parser[Expression] = declaration | conditional | disjunction | failure("Invalid expression")
   def expression: Parser[Expression] = declaration | conditional | disjunction | failure("Invalid expression")
 
-  def term: Parser[Expression] = lambda | block | literal | identifier | "(" ~> expression <~ ")"
-
-
-  //TODO: Check whether the first param is identifier or expression
   def funcall: Parser[Expression] = identifier ~ opt(operands) ^^ {
-    case exp ~ None => exp
-    case exp ~ Some(operands) => FunCall(exp, operands)
+    case id ~ None => id
+    case id ~ Some(operands) => FunCall(id, operands)
   }
 
   // block ::= "{" ~ expression ~ (";" ~ expression)* ~ "}" ^^ { make a Block}
@@ -34,11 +28,19 @@ class WookieParsers extends RegexParsers {
     case params ~ exp => Lambda(params, exp)
   }
 
-  // parameters ::= "(" ~ identifier* ~ ")" ^^ { make List[Identifier] }
-  def parameters: Parser[List[Identifier]] = "(" ~> rep(identifier) <~ ")" ^^ {
-    case Nil => Nil
-    case ids => ids
+  def parameters: Parser[List[Identifier]] = "(" ~> opt(identifier ~ rep("," ~> identifier)) <~ ")" ^^ {
+    case None => Nil
+    case Some(id ~ Nil) => List(id)
+    case Some(id ~ ids) => id :: ids
     case _ => Nil
+  }
+
+  //operands ::= "("~(expression ~ (","~expression)*)? ~ ")"
+  def operands: Parser[List[Expression]] = "(" ~> opt(expression ~ rep("," ~> expression)) <~ ")" ^^ {
+    //~> means "What is front of me, drop"
+    case None => Nil
+    case Some(exp ~ Nil) => List(exp)
+    case Some(exp ~ exps) => exp :: exps
   }
 
 
@@ -103,6 +105,8 @@ class WookieParsers extends RegexParsers {
     case term ~ terms => FunCall(Identifier("mul"), term :: terms)
   }
 
+  def term: Parser[Expression] = lambda | block | funcall | literal | identifier | "(" ~> expression <~ ")"
+
   def negate(exp: Expression): Expression = {
     val sub = Identifier("sub")
     val zero = Number(0)
@@ -133,13 +137,5 @@ class WookieParsers extends RegexParsers {
       case "false" => Boole(false)
       case "!false" => Boole(true)
     }
-
-  //operands ::= "("~(expression ~ (","~expression)*)? ~ ")"
-  def operands: Parser[List[Expression]] = "(" ~ rep(expression) ~ ")" ^^ {
-    //~> means "What is front of me, drop"
-    case "(" ~ Nil ~ ")" => Nil
-    case "(" ~ exps ~ ")" => exps
-  }
-
 
 }

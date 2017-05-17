@@ -1,0 +1,10 @@
+def bal = var(0)
+def deposit = lambda(amt) bal = [bal] + amt
+deposit(50)
+deposit(20)
+bal
+while(0 < [bal]) bal = [bal] - 1
+bal
+def multiDeposit = lambda(amt, pmnts) { def i = var(pmnts); while(0 < [i]) { deposit(amt); i = [i] - 1 }}
+multiDeposit(10, 5)
+bal

@@ -13,9 +13,6 @@ class SithParsers extends RegexParsers {
 
   def expression: Parser[Expression] = declaration | conditional | iteration | disjunction | failure("Invalid expression")
 
-  def term: Parser[Expression] = deref | assignment | lambda | block | funcall | literal | identifier | "(" ~> expression <~ ")"
-
-
   def iteration: Parser[Iteration] = "while" ~> "(" ~ expression ~ ")" ~ expression ^^ {
     case "(" ~ con ~ ")" ~ exp => Iteration(con, exp)
   }
@@ -28,12 +25,6 @@ class SithParsers extends RegexParsers {
   // assign a variable: x = blah
   def assignment: Parser[Expression] = identifier ~ "=" ~ expression ^^ {
     case id ~ "=" ~ exp => Assignment(id, exp)
-  }
-
-
-  def funcall: Parser[Expression] = identifier ~ opt(operands) ^^ {
-    case id ~ None => id
-    case id ~ Some(operands) => FunCall(id, operands)
   }
 
   // block ::= "{" ~ expression ~ (";" ~ expression)* ~ "}" ^^ { make a Block}
@@ -62,6 +53,10 @@ class SithParsers extends RegexParsers {
     case Some(exp ~ exps) => exp :: exps
   }
 
+  def funcall: Parser[Expression] = identifier ~ opt(operands) ^^ {
+    case id ~ None => id
+    case id ~ Some(operands) => FunCall(id, operands)
+  }
 
   //declaration ::= "def"~identifier~"="~expression
   def declaration: Parser[Declaration] = "def" ~ identifier ~ "=" ~ expression ^^ {
@@ -120,16 +115,18 @@ class SithParsers extends RegexParsers {
     case "*" ~ term => term
     case "/" ~ term => FunCall(Identifier("div"), List(Number(1.0), term))
   }) ^^ {
+
     case term ~ Nil => term
     case term ~ terms => FunCall(Identifier("mul"), term :: terms)
   }
+
+  def term: Parser[Expression] = deref | assignment | lambda | block | funcall | literal | identifier | "(" ~> expression <~ ")"
 
   def negate(exp: Expression): Expression = {
     val sub = Identifier("sub")
     val zero = Number(0)
     FunCall(sub, List(zero, exp))
   }
-
 
   //identifier ::= [a-zA-Z][a-zA-Z0-9]*
   def identifier: Parser[Identifier] =

@@ -1,7 +1,7 @@
 package expression
 
-import system.UndefinedException
-import value.{Closure, Environment, Value, alu}
+import system.{UndefinedException, alu}
+import value.{Closure, Environment, Value}
 
 /**
   * Created by Dilyar on 4/25/17.
