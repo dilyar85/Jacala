@@ -1,1 +1,1 @@
-CS152 class project - A Reference Interpreter for the Jedi Programming Language.
+A Reference Interpreter for the Jedi Programming Language.
