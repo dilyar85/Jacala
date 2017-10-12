@@ -3,72 +3,13 @@
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set(/Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/expression/FunCall.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/expression/Iteration.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/expression/FunCall$.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/expression/Iteration$.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/system/WookieParsers.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/system/alu.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/system/SithParsers.class, /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes/system/alu$.class)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m[naha] 	product: Set(/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/alu.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/Iteration.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/FunCall.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/alu.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/Iteration.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/FunCall.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/alu.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/Iteration.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala, /Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/expression/FunCall.scala)[0m
-[0m[[0minfo[0m] [0mCompiling 5 Scala sources to /Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes...[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 7e9c3795, interfacing (CompilerInterface) with Scala compiler version 2.12.2[0m
-[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
-[0m[[0mdebug[0m] [0m	-bootclasspath[0m
-[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/classes:/Users/Dilyar/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.2.jar[0m
-[0m[[0mdebug[0m] [0m	-classpath[0m
-[0m[[0mdebug[0m] [0m	/Users/Dilyar/MyProject/Scala/Jedi/target/scala-2.12/classes:/Users/Dilyar/Library/scala-support/scala-parser-combinators_2.12-1.0.5.jar[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala:36: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following inputs: ~(_, "}"), ~(_, (x: String forSome x not in "}"))[0m
-[0m[[33mwarn[0m] [0m  def block: Parser[Expression] = "{" ~ expression ~ rep(";" ~> expression) ~ "}" ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                                     ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala:68: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following inputs: ~(_, None), ~(_, Some(_))[0m
-[0m[[33mwarn[0m] [0m  def conditional: Parser[Conditional] = "if" ~ "(" ~ expression ~ ")" ~ expression ~ opt("else" ~ expression) ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                                                                  ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala:97: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~(_, Some(_))[0m
-[0m[[33mwarn[0m] [0m  def inequality: Parser[Expression] = sum ~ opt(("<" | ">" | "!=") ~ sum) ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                              ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala:105: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~((x: String forSome x not in ("+", "-")), _)[0m
-[0m[[33mwarn[0m] [0m  def sum: Parser[Expression] = product ~ rep(("+" | "-") ~ product ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                       ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/SithParsers.scala:115: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~((x: String forSome x not in ("*", "/")), _)[0m
-[0m[[33mwarn[0m] [0m  def product: Parser[Expression] = term ~ rep(("*" | "/") ~ term ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                     ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala:21: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following inputs: ~(_, "}"), ~(_, (x: String forSome x not in "}"))[0m
-[0m[[33mwarn[0m] [0m  def block: Parser[Expression] = "{" ~ expression ~ rep(";" ~> expression) ~ "}" ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                                     ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala:53: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following inputs: ~(_, None), ~(_, Some(_))[0m
-[0m[[33mwarn[0m] [0m  def conditional: Parser[Conditional] = "if" ~ "(" ~ expression ~ ")" ~ expression ~ opt("else" ~ expression) ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                                                                  ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala:82: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~(_, Some(_))[0m
-[0m[[33mwarn[0m] [0m  def inequality: Parser[Expression] = sum ~ opt(("<" | ">" | "!=") ~ sum) ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                              ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala:90: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~((x: String forSome x not in ("+", "-")), _)[0m
-[0m[[33mwarn[0m] [0m  def sum: Parser[Expression] = product ~ rep(("+" | "-") ~ product ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                       ^[0m
-[0m[[33mwarn[0m] [0m/Users/Dilyar/MyProject/Scala/Jedi/src/main/scala/system/WookieParsers.scala:100: match may not be exhaustive.[0m
-[0m[[33mwarn[0m] [0mIt would fail on the following input: ~((x: String forSome x not in ("*", "/")), _)[0m
-[0m[[33mwarn[0m] [0m  def product: Parser[Expression] = term ~ rep(("*" | "/") ~ term ^^ {[0m
-[0m[[33mwarn[0m] [0m                                                                     ^[0m
-[0m[[33mwarn[0m] [0mthere was one deprecation warning (since 2.11.0); re-run with -deprecation for details[0m
-[0m[[33mwarn[0m] [0m11 warnings found[0m
-[0m[[0mdebug[0m] [0mScala compilation took 2.09323341 s[0m
-[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
