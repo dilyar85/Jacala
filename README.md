@@ -5,7 +5,7 @@ Jacala is a simple programming language similar to other modern languages. It is
 - Variable assignment, object construction, and dereferencing
 - Eager execution, lazy execution, and dynamic type checking
 
-## How to run it
+# How to run it
 Make sure you have `sbt` on your machine. If not, you can install it shown as below:  
 ```
 $ brew update
@@ -21,49 +21,49 @@ $ run
 
 If you typed everything correctly, you would see `Running system.console` on your terminal  
 
-## Demo 
-**Declaration with arithmetic**  
+# Demo 
+### Declaration with arithmetic
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/declaration.gif" alt = "Declaration with arithmetic"> 
 
 ---
 
 
-**Logic**   
+### Logic 
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/logic.gif" alt = "logic screenshot">
 
 ---
 
 
-**If Statement**    
+### If Statement  
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/if_logic.gif" alt = "if statement screenshot">
 
 ---
 
 
-**Block**   
+### Block   
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/block.gif" alt = "block screenshot">
 
 ---
 
 
-**Lambda Function**    
+### Lambda Function    
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/lambda_square.gif" alt = "Lambda Function screenshot">
 
 ---
 
 
-**Recursive Function**    
+### Recursive Function  
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/recursive.gif" alt = "recursive function screenshot">
 
 ---
 
 
-**Variable Assignment**    
+### Variable Assignment
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/var.gif" alt = "var assignment screenshot">
 
 ---
 
 
-**While Loops**    
+### While Loops
 <img src = "https://github.com/dilyar85/Jacala/blob/master/screenshots/while_loops.gif" alt = "while loops screenshot">
 
